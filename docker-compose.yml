@@ -1,0 +1,610 @@
+version: '3.8'
+
+services:
+  spark-master:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_LOCAL_HOST=spark-master
+      - SPARK_WORKER_MEMORY=6g
+      - SPARK_WORKER_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+      - SPARK_MEMORY_OVERHEAD=1g
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./spark-entrypoint.sh:/spark-entrypoint.sh
+      - ./results:/home/wayneleo8/fl_spark/results
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    entrypoint: ["/spark-entrypoint.sh"]
+
+  spark-worker-1:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    container_name: spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_LOCAL_HOST=spark-worker-1
+      - SPARK_WORKER_MEMORY=6g
+      - SPARK_WORKER_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+      - SPARK_MEMORY_OVERHEAD=1g
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+    depends_on:
+      - spark-master
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./spark-entrypoint.sh:/spark-entrypoint.sh
+      - ./results:/home/wayneleo8/fl_spark/results
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    entrypoint: ["/spark-entrypoint.sh"]
+
+  spark-worker-2:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    container_name: spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_LOCAL_HOST=spark-worker-2
+      - SPARK_WORKER_MEMORY=6g
+      - SPARK_WORKER_CORES=2
+      - SPARK_EXECUTOR_MEMORY=6g
+      - SPARK_MEMORY_OVERHEAD=1g
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+    depends_on:
+      - spark-master
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./spark-entrypoint.sh:/spark-entrypoint.sh
+      - ./results:/home/wayneleo8/fl_spark/results
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    entrypoint: ["/spark-entrypoint.sh"]
+
+  data-init:
+    build: .
+    container_name: data-init
+    command: ["python", "/app/traditional_code/prepare_mnist.py"]
+    volumes:
+      - ./data:/app/data
+    networks:
+      - federated_net
+
+  fl-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-server
+    command: ["python", "/app/traditional_code/server.py"]
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./traditional_code:/app/traditional_code
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+      - ./results:/app/results
+    networks:
+      - federated_net
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+      fl-participant-1:
+        condition: service_started
+      fl-participant-2:
+        condition: service_started
+      fl-participant-3:
+        condition: service_started
+      fl-participant-4:
+        condition: service_started
+      fl-participant-5:
+        condition: service_started
+      fl-participant-6:
+        condition: service_started
+      fl-participant-7:
+        condition: service_started
+      fl-participant-8:
+        condition: service_started
+      fl-participant-9:
+        condition: service_started
+      fl-participant-10:
+        condition: service_started
+      fl-participant-11:
+        condition: service_started
+      fl-participant-12:
+        condition: service_started
+      fl-participant-13:
+        condition: service_started
+      fl-participant-14:
+        condition: service_started
+      fl-participant-15:
+        condition: service_started
+      fl-participant-16:
+        condition: service_started
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  fl-participant-1:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-1
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "1"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-2:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-2
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "2"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-3:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-3
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "3"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-4:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-4
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "4"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-5:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-5
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "5"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-6:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-6
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "6"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-7:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-7
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "7"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-8:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-8
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "8"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-9:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-9
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "9"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-10:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-10
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "10"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-11:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-11
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "11"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-12:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-12
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "12"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-13:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-13
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "13"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-14:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-14
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "14"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-15:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-15
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "15"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  fl-participant-16:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: fl-participant-16
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "16"]
+    depends_on:
+      data-init:
+        condition: service_completed_successfully
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - federated_net
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+    networks:
+      - federated_net
+
+networks:
+  federated_net:
+    driver: bridge
+  default:
+    name: fl_spark_federated_net 

@@ -1,0 +1,40 @@
+# Base ML
+numpy>=2.0.0
+pandas
+matplotlib
+scipy>=1.10.0
+
+# Spark related
+pyspark
+findspark
+
+# Kafka
+kafka-python
+
+# Monitoring
+prometheus-client
+
+# Utilities
+requests
+seaborn
+python-dotenv
+
+# 差分隱私
+diffprivlib==0.6.6
+scikit-learn>=1.4.0
+
+# 監控和指標
+psutil>=5.8.0
+
+# 工具
+tqdm>=4.62.0
+
+# PyTorch 相關（CUDA 支援）
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+--extra-index-url https://download.pytorch.org/whl/cu117
+
+# 評估相關
+jupyter>=1.0.0
+notebook>=6.4.0 

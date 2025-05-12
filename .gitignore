@@ -1,0 +1,136 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Docker
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Data
+data/
+results/
+
+# Environment
+.env
+.venv
+venv/
+ENV/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+.docker/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Results and data
+results/*/
+!results/.gitkeep
+data/*/
+!data/.gitkeep
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Custom
+.Trash-0/
+
+# Spark
+spark-tmp/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+.docker/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Results and data
+results/*/
+!results/.gitkeep
+data/*/
+!data/.gitkeep
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Custom
+.Trash-0/ 
