@@ -107,7 +107,8 @@ services:
   data-init:
     build: .
     container_name: data-init
-    command: ["python", "/app/traditional_code/prepare_mnist.py"]
+    user: "0:0"
+    command: ["python3", "/app/traditional_code/prepare_mnist.py"]
     volumes:
       - ./data:/app/data
     networks:

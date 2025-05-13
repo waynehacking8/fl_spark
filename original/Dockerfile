@@ -104,5 +104,5 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV MPLCONFIGDIR=/tmp/matplotlib
 
-# 切換回 spark 用戶
-USER 1001 
+# 不要切換用戶，保持 root
+# USER 1001 

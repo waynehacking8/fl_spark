@@ -1,0 +1,64 @@
+version: '3.8'
+
+x-exp-vol: &exp-vol
+  volumes:
+    - ./fault_tolerance/ft_packet_loss_30/results:/app/results
+
+x-loss-participant: &loss-participant
+  cap_add:
+    - NET_ADMIN
+  volumes:
+    - ./loss_wrapper.sh:/loss_wrapper.sh
+
+services:
+  fl-server:
+    <<: *exp-vol
+
+  fl-participant-1:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "1"]
+  fl-participant-2:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "2"]
+  fl-participant-3:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "3"]
+  fl-participant-4:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "4"]
+  fl-participant-5:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "5"]
+  fl-participant-6:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "6"]
+  fl-participant-7:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "7"]
+  fl-participant-8:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "8"]
+  fl-participant-9:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "9"]
+  fl-participant-10:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "10"]
+  fl-participant-11:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "11"]
+  fl-participant-12:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "12"]
+  fl-participant-13:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "13"]
+  fl-participant-14:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "14"]
+  fl-participant-15:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "15"]
+  fl-participant-16:
+    <<: [*loss-participant, *exp-vol]
+    command: ["/bin/bash", "/loss_wrapper.sh", "16"] 
