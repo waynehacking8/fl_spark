@@ -316,16 +316,66 @@ docker compose up -d spark-master spark-worker-{1..2}
 ### 二、性能觀察（傳統 FL vs Spark FL）
 |  指標  | 傳統 FL  | Spark FL |
 |--------|----------|----------|
-| Round 1 時間 | **27 s** | 32 s |
-| Round 20 累積 | 686 s | **588 s** |
-| 最終測試準確率 | 98.30 % | **98.62 %** |
+| Round 1 時間 | 42.55 s | **35.11 s** |
+| Round 20 累積 | 686.50 s | **609.98 s** |
+| 最終測試準確率 | 98.22 % | **98.43 %** |
 
 * 為什麼傳統 FL 越跑越慢？
-  1. **序列化/網路**：每輪要 pickle 整個 `state_dict`，16 條 TCP 連線串行收發。
-  2. **CUDA cache**：participant 每輪 `empty_cache()`，下一輪又得重新 warm-up。
-  3. **Server thread 瓶頸**：`handle_client` 仍是 blocking 模式（見 `server.py`）。
+   1. **序列化/網路**：每輪要 pickle 整個 `state_dict`，16 條 TCP 連線串行收發。
+   2. **CUDA cache**：participant 每輪 `empty_cache()`，下一輪又得重新 warm-up。
+   3. **Server thread 瓶頸**：`handle_client` 仍是 blocking 模式（見 `server.py`）。
 
-* Spark FL 優勢
-  - 16 個 partition 併行在兩個 worker，訓練/聚合在 JVM 記憶體中完成，I/O 極小。
+> **20 s / 40 s 交錯現象？**
 
-> 改進方向：改用 asyncio/gRPC、持久化長連線、壓縮張量或改用 NCCL AllReduce。
+Round 時間在 `results/traditional/checkpoints/results.csv` 呈現出約 20 s 與 40 s 交錯的鋸齒型累積曲線，主要來自兩段「最慢者決定」的等待：
+
+* **GPU 訓練階段 (~20 s)** — 16 個 participant 本地訓練 5 epoch，快的 17–19 s 就結束並把 update 傳回；慢的 (通常是第一批拿不到 GPU time-slice 或觸發 Lazy Tensor alloc) 會拖到 ~20 s ↑。
+* **CPU 評估 + 圖表/I/O (~18 s)** — 服務端聚合後會：
+  1. 在 CPU 上對 10 k MNIST 測試集推斷 (單執行緒約 14–16 s)。
+  2. 用 Matplotlib 重繪雙軸性能圖並 `plt.savefig()` (2–3 s)。
+
+若所有 participant 很快返回，Server 仍得跑完「評估 + 繪圖」，於是該輪總長逼近 40 s；反之只要有個 straggler 佔滿 20 s，Server 評估與繪圖與等待時間重疊，總長就壓到 ~20 s。兩種情況交錯，就得到 20 ↔ 40 s 的鋸齒型 timestamp。
+
+改進方向：改用 asyncio/gRPC、持久化長連線、壓縮張量或改用 NCCL AllReduce。
+
+## Fault-Tolerance Experiments Roadmap
+
+為了系統化驗證容錯能力，後續所有實驗均放在頂層 `fault_tolerance/` 資料夾，每個子資料夾對應一個獨立場景，內含：
+* `docker-compose.override.yml` — 只覆寫與故障相關的服務行為（建議用 `depends_on`, `command`, `profiles`）
+* `run.sh` — 一鍵啟動 + 故障注入腳本
+* `README.md` — 說明目標、步驟、評估指標、收集的 raw log 列表
+* `results/` — 實驗輸出（⚠️ 勿 commit ※ Git ignore）
+
+| Folder | Fault Model | 注入時機 | 注入機制 |
+|---|---|---|---|
+| `ft_node_loss_single/` | 單節點故障 | Round 5 | `docker stop fl-participant-9` 然後觀察自動重啟 |
+| `ft_node_loss_multi/` | 同時 4 節點故障 | Round 10 | 停 `fl-participant-{5,6,11,12}` |
+| `ft_shard_loss_10/` | 10% 資料缺失 | preprocess | 修改 `prepare_mnist.py` 隨機丟樣本 |
+| `ft_shard_loss_30/` | 30% 資料缺失 | preprocess | 同上，但丟三成 |
+| `ft_packet_loss_10/` | 10% 模型更新丟包 | transmit | 在 `participant.py` 內隨機 `continue` 傳送 |
+| `ft_packet_loss_30/` | 30% 模型更新丟包 | transmit | 同上，30% |
+
+### Spark FL 容錯優勢
+
+| Fault Type | 傳統 FL 行為 | Spark FL 行為 | 為何 Spark 更佳 |
+|------------|-------------|---------------|---------------|
+| Node Loss  | Server 阻塞等待 / 需人工重啟 participant；整輪超時後才恢復 | Spark Task 失敗自動重排程到其他 executor，數秒內恢復 | Spark 的 Task speculation + heart-beat 檢測機制，無須人工干預 |
+| Shard Loss | 單節點資料缺失→梯度偏差；需額外邏輯跳過空 shard | RDD 分區缺失自動重算（從 HDFS/cache），不影響聚合 | Spark 保留原始資料副本，多副本容錯 |
+| Packet Loss | TCP socket 丟包→必須重傳整個 `state_dict` | 使用 Spark block transfer + chunk 重傳，僅補丟失 segment | Spark Netty 傳輸層具備 checksum 與 chunk-level retry |
+
+**指標期待**
+1. Node Loss: Spark FL 重啟時間 < 5 s；傳統 FL > 1 round (≈40 s)。
+2. Shard Loss: Spark FL 減少 < 2% precision；傳統 FL 可能 > 5% 且易震盪。
+3. Packet Loss: Spark FL throughput 下降 < 10%；傳統 FL 可能卡住或 timeout。
+
+> 以上預期將在實驗結果中以 `results/*.csv` 及 Spark UI Event Logs 佐證。
+
+> **執行範例（單節點故障）：**
+>
+> ```bash
+> cd fault_tolerance/ft_node_loss_single
+> ./run.sh          # 啟動 baseline + 定時 docker stop
+> # 完成後結果位於 fault_tolerance/ft_node_loss_single/results/
+> ```
+
+所有新程式碼、Compose 檔只可放在 `fault_tolerance/`，嚴禁改動 `original/`。
