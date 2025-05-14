@@ -1,30 +1,36 @@
 version: '3.8'
 
+x-logging: &default-logging
+  driver: "local"
+  options:
+    max-size: "5m"
+    max-file: "2"
+
 services:
   spark-master:
     build:
       context: .
       dockerfile: spark.Dockerfile
-    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
     environment:
       - SPARK_MODE=master
-      - SPARK_MASTER_HOST=spark-master
-      - SPARK_LOCAL_HOST=spark-master
-      - SPARK_WORKER_MEMORY=6g
-      - SPARK_WORKER_CORES=2
-      - SPARK_EXECUTOR_MEMORY=6g
-      - SPARK_MEMORY_OVERHEAD=1g
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_PUBLIC_DNS=localhost
+      - SPARK_MEMORY_FRACTION=0.8
+      - SPARK_MEMORY_STORAGEFRACTION=0.3
       - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
-      - PYSPARK_PYTHON=/usr/bin/python3
-      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
-    ports:
-      - "7077:7077"
-      - "8080:8080"
+      - SPARK_KRYOSERIALIZER_BUFFER_MAX=1024m
+      - SPARK_LOCAL_DIRS=/tmp
+      - SPARK_WORKER_CLEANUP_ENABLED=true
     volumes:
-      - ./spark_code:/app/spark_code
       - ./data:/app/data
-      - ./spark-entrypoint.sh:/spark-entrypoint.sh
-      - ./results:/home/wayneleo8/fl_spark/results
+      - ./results:/app/results
+      - ./spark_code:/app/spark_code
     networks:
       - federated_net
     deploy:
@@ -40,69 +46,39 @@ services:
     build:
       context: .
       dockerfile: spark.Dockerfile
-    container_name: spark-worker-1
+    hostname: spark-worker-1
     environment:
       - SPARK_MODE=worker
-      - SPARK_MASTER_HOST=spark-master
-      - SPARK_LOCAL_HOST=spark-worker-1
-      - SPARK_WORKER_MEMORY=6g
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=4G
       - SPARK_WORKER_CORES=2
-      - SPARK_EXECUTOR_MEMORY=6g
-      - SPARK_MEMORY_OVERHEAD=1g
-      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
-      - PYSPARK_PYTHON=/usr/bin/python3
-      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
-    depends_on:
-      - spark-master
     volumes:
       - ./spark_code:/app/spark_code
       - ./data:/app/data
-      - ./spark-entrypoint.sh:/spark-entrypoint.sh
-      - ./results:/home/wayneleo8/fl_spark/results
+      - ./results:/app/results
+    depends_on:
+      - spark-master
     networks:
       - federated_net
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
-    entrypoint: ["/spark-entrypoint.sh"]
 
   spark-worker-2:
     build:
       context: .
       dockerfile: spark.Dockerfile
-    container_name: spark-worker-2
+    hostname: spark-worker-2
     environment:
       - SPARK_MODE=worker
-      - SPARK_MASTER_HOST=spark-master
-      - SPARK_LOCAL_HOST=spark-worker-2
-      - SPARK_WORKER_MEMORY=6g
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=4G
       - SPARK_WORKER_CORES=2
-      - SPARK_EXECUTOR_MEMORY=6g
-      - SPARK_MEMORY_OVERHEAD=1g
-      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
-      - PYSPARK_PYTHON=/usr/bin/python3
-      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
-    depends_on:
-      - spark-master
     volumes:
       - ./spark_code:/app/spark_code
       - ./data:/app/data
-      - ./spark-entrypoint.sh:/spark-entrypoint.sh
-      - ./results:/home/wayneleo8/fl_spark/results
+      - ./results:/app/results
+    depends_on:
+      - spark-master
     networks:
       - federated_net
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
-    entrypoint: ["/spark-entrypoint.sh"]
 
   data-init:
     build: .
@@ -123,7 +99,7 @@ services:
         limits:
           memory: 4G
         reservations:
-          memory: 2G
+          memory: 4G
           devices:
             - driver: nvidia
               count: 1
@@ -176,6 +152,7 @@ services:
         condition: service_started
     environment:
       - PYTHONUNBUFFERED=1
+    logging: *default-logging
 
   fl-participant-1:
     build: .
@@ -201,6 +178,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-2:
     build: .
@@ -226,6 +204,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-3:
     build: .
@@ -251,6 +230,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-4:
     build: .
@@ -276,6 +256,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-5:
     build: .
@@ -301,6 +282,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-6:
     build: .
@@ -326,6 +308,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-7:
     build: .
@@ -351,6 +334,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-8:
     build: .
@@ -376,6 +360,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-9:
     build: .
@@ -401,6 +386,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-10:
     build: .
@@ -426,6 +412,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-11:
     build: .
@@ -451,6 +438,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-12:
     build: .
@@ -476,6 +464,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-13:
     build: .
@@ -501,6 +490,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-14:
     build: .
@@ -526,6 +516,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-15:
     build: .
@@ -551,6 +542,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   fl-participant-16:
     build: .
@@ -576,6 +568,7 @@ services:
     depends_on:
       data-init:
         condition: service_completed_successfully
+    logging: *default-logging
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest

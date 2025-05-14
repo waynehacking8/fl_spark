@@ -73,7 +73,7 @@ class SparkFL:
         self.data_dir = '/app/data'
         
         # 修改結果保存路徑，使用本地目錄
-        self.results_dir = '/home/wayneleo8/fl_spark/results/spark'
+        self.results_dir = '/app/results/spark'
         os.makedirs(self.results_dir, exist_ok=True)
         self.accuracy_history_file = os.path.join(self.results_dir, 'spark_fl_accuracy.csv')
         self.results_file = os.path.join(self.results_dir, 'results.csv')

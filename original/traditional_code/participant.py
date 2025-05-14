@@ -312,10 +312,10 @@ class FederatedParticipant:
         # 返回更新後的模型狀態字典
         return self.model.state_dict()
 
-    def connect_to_server(self, max_retries=5, delay=5):
-        """Attempts to connect to the server with retries."""
+    def connect_to_server(self, max_retries=0, delay=5):
+        """Attempts to connect to the server. max_retries=0 代表無限重試"""
         attempt = 0
-        while attempt < max_retries:
+        while (max_retries == 0) or (attempt < max_retries):
             attempt += 1
             try:
                 logging.info(f"Connection attempt {attempt}/{max_retries}...")

@@ -35,7 +35,6 @@ logs/
 
 # Data
 data/
-results/
 
 # Environment
 .env
@@ -71,8 +70,6 @@ env/
 *.db
 
 # Results and data
-results/*/
-!results/.gitkeep
 data/*/
 !data/.gitkeep
 

@@ -142,7 +142,7 @@ def load_data(data_dir='/app/data'):
         download = True
     
     test_dataset = datasets.MNIST(data_dir, train=False, download=download, transform=transform)
-    test_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
     return test_loader
 
 def evaluate_model(model, test_loader, device):
@@ -171,7 +171,7 @@ def evaluate_model(model, test_loader, device):
             
             batch_count += 1
             if batch_count % 5 == 0:
-                logging.info(f"Evaluated {batch_count} batches...")
+                logging.debug(f"Evaluated {batch_count} batches...")
 
     test_loss /= total
     accuracy = 100. * correct / total
@@ -344,47 +344,42 @@ def aggregate_updates(global_model, updates):
 def save_results(rounds, accuracies, losses, timestamps):
     """保存訓練結果到 CSV 文件"""
     results_file = os.path.join(RESULTS_DIR, 'results.csv')
-    
-    # 追加新的結果（只追加最新的一輪）
-    with open(results_file, 'a') as f:
-        round_num = len(accuracies)  # 當前輪次
-        elapsed_time = timestamps[-1]  # 已經是總運行時間
-        f.write(f"{round_num},{elapsed_time:.2f},{accuracies[-1]},{losses[-1]}\n")
-    
     try:
-        # 繪製性能圖表
-        plt.style.use('seaborn-v0_8-darkgrid')
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10))
-        
-        x_values = range(1, len(accuracies) + 1)
-        
-        # 繪製準確率曲線
-        color = 'tab:red'
-        ax1.plot(x_values, accuracies, color=color, marker='o', label='Accuracy')
-        ax1.set_xlabel('Round')
-        ax1.set_ylabel('Accuracy (%)', color=color)
-        ax1.tick_params(axis='y', labelcolor=color)
-        ax1.grid(True)
-        ax1.set_ylim(80, 100)  # 設置準確率範圍從 80% 到 100%
-        
-        # 繪製損失曲線
-        color = 'tab:blue'
-        ax2.plot(x_values, losses, color=color, marker='x', label='Loss')
-        ax2.set_xlabel('Round')
-        ax2.set_ylabel('Loss', color=color)
-        ax2.tick_params(axis='y', labelcolor=color)
-        ax2.grid(True)
-        
-        # 添加圖例
-        ax1.legend(loc='lower right')
-        ax2.legend(loc='upper right')
-        
-        # 調整子圖之間的間距
-        plt.tight_layout()
-        
-        # 保存圖表
-        plt.savefig(os.path.join(RESULTS_DIR, 'performance.png'), dpi=300, bbox_inches='tight')
-        plt.close(fig)
+        # 追加新的結果（只追加最新的一輪）
+        with open(results_file, 'a') as f:
+            round_num = len(accuracies)  # 當前輪次
+            elapsed_time = timestamps[-1]  # 已經是總運行時間
+            f.write(f"{round_num},{elapsed_time:.2f},{accuracies[-1]},{losses[-1]}\n")
+            logging.info(f"[save_results] 寫入 results.csv: round={round_num}, time={elapsed_time:.2f}, acc={accuracies[-1]}, loss={losses[-1]}")
+    except Exception as e:
+        logging.error(f"[save_results] 寫入 results.csv 失敗: {e}")
+        logging.error(f"[save_results] rounds={rounds}, accuracies={accuracies}, losses={losses}, timestamps={timestamps}")
+    try:
+        # 繪製性能圖表（每 5 輪或第一輪才執行，減少磁碟 I/O）
+        if round_num == 1 or round_num % 5 == 0:
+            plt.style.use('seaborn-v0_8-darkgrid')
+            fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10))
+            x_values = range(1, len(accuracies) + 1)
+            # 準確率曲線
+            color = 'tab:red'
+            ax1.plot(x_values, accuracies, color=color, marker='o', label='Accuracy')
+            ax1.set_xlabel('Round')
+            ax1.set_ylabel('Accuracy (%)', color=color)
+            ax1.tick_params(axis='y', labelcolor=color)
+            ax1.grid(True)
+            ax1.set_ylim(80, 100)
+            # 損失曲線
+            color = 'tab:blue'
+            ax2.plot(x_values, losses, color=color, marker='x', label='Loss')
+            ax2.set_xlabel('Round')
+            ax2.set_ylabel('Loss', color=color)
+            ax2.tick_params(axis='y', labelcolor=color)
+            ax2.grid(True)
+            ax1.legend(loc='lower right')
+            ax2.legend(loc='upper right')
+            plt.tight_layout()
+            plt.savefig(os.path.join(RESULTS_DIR, 'performance.png'), dpi=100, bbox_inches='tight')
+            plt.close(fig)
     except Exception as e:
         logging.error(f"Error saving results: {e}")
 
