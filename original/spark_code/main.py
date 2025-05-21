@@ -28,18 +28,21 @@ def clean_cuda_cache():
 class CNNMnist(nn.Module):
     def __init__(self):
         super(CNNMnist, self).__init__()
-        self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
-        self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
-        self.conv2_drop = nn.Dropout2d()
-        self.fc1 = nn.Linear(320, 50)
-        self.fc2 = nn.Linear(50, 10)
+        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
+        self.relu1 = nn.ReLU()
+        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+        self.relu2 = nn.ReLU()
+        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.fc1 = nn.Linear(64 * 7 * 7, 128)
+        self.relu3 = nn.ReLU()
+        self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
-        x = torch.relu(torch.max_pool2d(self.conv1(x), 2))
-        x = torch.relu(torch.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
-        x = x.view(-1, 320)
-        x = torch.relu(self.fc1(x))
-        x = torch.dropout(x, p=0.5, train=self.training)
+        x = self.pool1(self.relu1(self.conv1(x)))
+        x = self.pool2(self.relu2(self.conv2(x)))
+        x = x.view(-1, 64 * 7 * 7)
+        x = self.relu3(self.fc1(x))
         x = self.fc2(x)
         return x
 
@@ -195,10 +198,20 @@ class SparkFL:
         total_samples = len(train_dataset)
         print(f"訓練數據總樣本數: {total_samples}")
         
-        # 創建分區 RDD
+        # 創建固定的數據分片
         samples_per_partition = total_samples // self.num_workers
         print(f"創建 {self.num_workers} 個分區，每個約 {samples_per_partition} 個樣本")
-        index_rdd = self.spark.sparkContext.parallelize(range(total_samples), self.num_workers)
+        
+        # 創建固定的分片索引
+        partition_indices = []
+        for i in range(self.num_workers):
+            start_idx = i * samples_per_partition
+            end_idx = start_idx + samples_per_partition if i < self.num_workers - 1 else total_samples
+            partition_indices.append(list(range(start_idx, end_idx)))
+            print(f"分區 {i} 的索引範圍: {start_idx} 到 {end_idx-1}, 樣本數: {end_idx-start_idx}")
+        
+        # 創建分區 RDD
+        index_rdd = self.spark.sparkContext.parallelize(partition_indices, self.num_workers)
         actual_partitions = index_rdd.getNumPartitions()
         print(f"實際創建的分區數: {actual_partitions}")
         
@@ -243,7 +256,10 @@ class SparkFL:
                     torch.cuda.empty_cache()
                 
                 # 收集分區內的所有索引
-                indices = list(indices_iterator)
+                indices = []
+                for idx_list in indices_iterator:
+                    indices.extend(idx_list)
+                
                 if not indices:
                     return [(0, None)]
                 
@@ -255,18 +271,21 @@ class SparkFL:
                     class CNNMnist(nn.Module):
                         def __init__(self):
                             super(CNNMnist, self).__init__()
-                            self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
-                            self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
-                            self.conv2_drop = nn.Dropout2d()
-                            self.fc1 = nn.Linear(320, 50)
-                            self.fc2 = nn.Linear(50, 10)
+                            self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
+                            self.relu1 = nn.ReLU()
+                            self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
+                            self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+                            self.relu2 = nn.ReLU()
+                            self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
+                            self.fc1 = nn.Linear(64 * 7 * 7, 128)
+                            self.relu3 = nn.ReLU()
+                            self.fc2 = nn.Linear(128, 10)
 
                         def forward(self, x):
-                            x = torch.relu(torch.max_pool2d(self.conv1(x), 2))
-                            x = torch.relu(torch.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
-                            x = x.view(-1, 320)
-                            x = torch.relu(self.fc1(x))
-                            x = torch.dropout(x, p=0.5, train=self.training)
+                            x = self.pool1(self.relu1(self.conv1(x)))
+                            x = self.pool2(self.relu2(self.conv2(x)))
+                            x = x.view(-1, 64 * 7 * 7)
+                            x = self.relu3(self.fc1(x))
                             x = self.fc2(x)
                             return x
                     
@@ -286,20 +305,26 @@ class SparkFL:
                         transforms.Normalize((0.1307,), (0.3081,))
                     ])
                     
-                    train_dataset = datasets.MNIST(
-                        root='/app/data', 
-                        train=True, 
-                        download=False,  
-                        transform=transform
-                    )
+                    # 使用預加載的數據文件
+                    train_data = torch.load('/app/data/mnist_train_part1.pt' if worker_id % 2 == 1 else '/app/data/mnist_train_part2.pt')
+                    data = train_data['data'].float() / 255.0
+                    targets = train_data['targets']
                     
-                    # 創建本地數據子集
-                    local_dataset = Subset(train_dataset, indices)
+                    # 創建本地數據集
+                    local_data = data[indices]
+                    local_targets = targets[indices]
+                    
+                    # 調整數據形狀以匹配模型輸入
+                    local_data = local_data.unsqueeze(1)  # 添加通道維度
+                    
+                    # 創建 DataLoader
+                    local_dataset = torch.utils.data.TensorDataset(local_data, local_targets)
                     local_loader = DataLoader(
                         local_dataset, 
-                        batch_size=32, 
+                        batch_size=64,  # 增加批次大小
                         shuffle=True,
-                        pin_memory=True  # 啟用 pin_memory 以加速 GPU 傳輸
+                        pin_memory=True,
+                        num_workers=2  # 使用多進程加載數據
                     )
                     
                     print(f"Worker PID: {worker_id} 數據加載成功，共 {len(local_dataset)} 個樣本")
@@ -323,13 +348,11 @@ class SparkFL:
                             loss.backward()
                             optimizer.step()
                             
-                            # 每 10 個批次清理一次記憶體
-                            if batch_idx % 10 == 0:
+                            # 每 50 個批次清理一次記憶體
+                            if batch_idx % 50 == 0:
                                 if torch.cuda.is_available():
                                     torch.cuda.empty_cache()
                                 gc.collect()
-                            
-                            if batch_idx % 50 == 0:
                                 print(f"Worker PID: {worker_id} 批次 {batch_idx}/{len(local_loader)}")
                         
                         # 清理記憶體
@@ -507,8 +530,26 @@ if __name__ == "__main__":
         .config("spark.executor.memory", "4g") \
         .config("spark.executor.cores", "2") \
         .config("spark.python.worker.memory", "4g") \
+        .config("spark.default.parallelism", "4") \
+        .config("spark.sql.shuffle.partitions", "4") \
+        .config("spark.memory.fraction", "0.8") \
+        .config("spark.memory.storageFraction", "0.3") \
+        .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer") \
+        .config("spark.kryoserializer.buffer.max", "1024m") \
+        .config("spark.shuffle.compress", "true") \
+        .config("spark.broadcast.compress", "true") \
+        .config("spark.rdd.compress", "true") \
+        .config("spark.io.compression.codec", "snappy") \
+        .config("spark.local.dir", "/tmp") \
+        .config("spark.worker.cleanup.enabled", "true") \
+        .config("spark.executor.extraJavaOptions", "-XX:+UseG1GC") \
+        .config("spark.driver.extraJavaOptions", "-XX:+UseG1GC") \
         .getOrCreate()
-    spark_fl = SparkFL(spark, num_workers=16, num_rounds=20)
+    
+    # 設置日誌級別
+    spark.sparkContext.setLogLevel("ERROR")
+    
+    spark_fl = SparkFL(spark, num_workers=2, num_rounds=20)
     try:
         spark_fl.train()
     except Exception as e:

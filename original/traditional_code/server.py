@@ -104,9 +104,9 @@ def send_msg(sock, data, header_size=HEADER_SIZE):
 
 # --- 輔助函數結束 ---
 
-class CNNModel(nn.Module):
+class CNNMnist(nn.Module):
     def __init__(self):
-        super(CNNModel, self).__init__()
+        super(CNNMnist, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
         self.relu1 = nn.ReLU()
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -142,7 +142,7 @@ def load_data(data_dir='/app/data'):
         download = True
     
     test_dataset = datasets.MNIST(data_dir, train=False, download=download, transform=transform)
-    test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=2, pin_memory=True)
     return test_loader
 
 def evaluate_model(model, test_loader, device):
@@ -183,10 +183,13 @@ def evaluate_model(model, test_loader, device):
 updates_lock = threading.Lock()
 client_updates = [] # Shared list for updates from clients
 # Determine device and initialize model on it
-device = torch.device("cpu")  # 強制使用CPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+if torch.cuda.is_available():
+    torch.cuda.set_device(0)
+    torch.cuda.empty_cache()
 logging.info(f"服務器使用設備: {device}") # 記錄設備
-global_model = CNNModel().to(device)
-EXPECTED_PARTICIPANTS = 16  # 修改為 16 個參與者
+global_model = CNNMnist().to(device)
+EXPECTED_PARTICIPANTS = 2  # 修改為 2 個參與者
 processed_participants_count = 0 # Counter for processed participants in a round
 processed_participants_lock = threading.Lock() # Lock for the counter
 round_event = threading.Event() # Event to signal round completion

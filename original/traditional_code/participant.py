@@ -126,9 +126,9 @@ def send_msg(sock, data, header_size=HEADER_SIZE):
 # --- Network Helper Functions End ---
 
 # --- CNN Model Definition (Should match server.py) ---
-class CNNModel(nn.Module):
+class CNNMnist(nn.Module):
     def __init__(self):
-        super(CNNModel, self).__init__()
+        super(CNNMnist, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
         self.relu1 = nn.ReLU()
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -151,7 +151,7 @@ class CNNModel(nn.Module):
 # --- CNN Model Definition End ---
 
 class FederatedParticipant:
-    def __init__(self, participant_id, server_host='fl-server', server_port=9999, data_dir='/app/data', batch_size=32, learning_rate=0.01, local_epochs=5, num_total_participants=16):
+    def __init__(self, participant_id, server_host='fl-server', server_port=9999, data_dir='/app/data', batch_size=32, learning_rate=0.01, local_epochs=5, num_total_participants=2):
         self.participant_id = participant_id # Expecting integer ID (e.g., 0, 1)
         self.server_host = server_host
         self.server_port = server_port
@@ -171,7 +171,7 @@ class FederatedParticipant:
         logging.info(f"初始化參與者 {self.participant_id} 在設備: {self.device}")
 
         # 初始化模型到正確的設備
-        self.model = CNNModel().to(self.device)
+        self.model = CNNMnist().to(self.device)
         self.local_dataloader = None
         self.dataset_size = 0
 
@@ -197,82 +197,24 @@ class FederatedParticipant:
                 buf = torch.load(shard_pt, map_location='cpu')
                 data  = buf['data'].unsqueeze(1).float() / 255.0  # (N,1,28,28) float32
                 targets = buf['targets']
-
-                local_dataset = torch.utils.data.TensorDataset(data, targets)
-                self.dataset_size = len(local_dataset)
-                self.local_dataloader = DataLoader(local_dataset, batch_size=self.batch_size, shuffle=True, num_workers=0)
-                logging.info(f"Loaded {self.dataset_size} samples from shard.")
-                return  # ← 已完成載入
-
-            # 若 .pt 不存在則退回原本 torchvision 解壓流程
-
-            transform = transforms.Compose([
-                transforms.ToTensor(),
-                transforms.Normalize((0.1307,), (0.3081,)) # MNIST specific normalization
-            ])
-
-            # 等待 torchvision 下載後的目錄就緒
-            mnist_path = os.path.join(self.data_dir, 'MNIST')
-            max_wait_time = 60  # 最多等待60秒
-            wait_time = 0
-            while not os.path.exists(mnist_path) and wait_time < max_wait_time:
-                logging.info(f"等待數據目錄就緒... ({wait_time}秒)")
-                time.sleep(5)
-                wait_time += 5
-
-            if not os.path.exists(mnist_path):
-                logging.error(f"等待超時：數據目錄 {mnist_path} 不存在")
-                return
-
-            logging.info("數據目錄就緒，開始加載數據集")
-            download = False  # 永遠不要下載，等待數據就緒
-
-            # Load the full MNIST training dataset
-            full_train_dataset = datasets.MNIST(
-                self.data_dir,
-                train=True,
-                download=download,
-                transform=transform
-            )
-            logging.info(f"Full MNIST training dataset loaded with {len(full_train_dataset)} samples.")
-
-            # 調整數據分配邏輯
-            num_samples = len(full_train_dataset)
-            indices = list(range(num_samples))
-            random.shuffle(indices)  # 隨機打亂索引
-            
-            # 每個參與者分配 3,750 個樣本
-            samples_per_participant = 3750
-            
-            # 計算每個參與者的數據範圍
-            participant_idx = self.participant_id - 1  # 因為參與者 ID 從 1 開始
-            start_idx = participant_idx * samples_per_participant
-            end_idx = start_idx + samples_per_participant
-
-            local_indices = indices[start_idx:end_idx]
-            self.dataset_size = len(local_indices)
-
-            if self.dataset_size == 0:
-                 logging.error(f"No data assigned to participant {self.participant_id} based on partitioning.")
-                 return
-
-            local_dataset = Subset(full_train_dataset, local_indices)
-            self.local_dataloader = DataLoader(
-                local_dataset, 
-                batch_size=self.batch_size, 
-                shuffle=True, 
-                num_workers=0,  # 在 Docker 中使用多進程可能會有問題
-                pin_memory=False  # 在 CPU 上運行時不需要
-            )
-
-            logging.info(f"Local data loaded for participant {self.participant_id}: {self.dataset_size} samples. DataLoader created.")
-
-        except FileNotFoundError:
-            logging.error(f"Error: Data directory not found at {self.data_dir}")
-            self.local_dataloader = None
+                
+                # 創建數據集和數據加載器
+                dataset = torch.utils.data.TensorDataset(data, targets)
+                self.local_dataloader = DataLoader(
+                    dataset,
+                    batch_size=self.batch_size,
+                    shuffle=True,
+                    num_workers=2,
+                    pin_memory=True
+                )
+                self.dataset_size = len(dataset)
+                logging.info(f"Loaded {self.dataset_size} samples for participant {self.participant_id}")
+            else:
+                logging.error(f"Shard file {shard_pt} not found!")
+                raise FileNotFoundError(f"Shard file {shard_pt} not found!")
         except Exception as e:
-            logging.error(f"Error loading or partitioning data: {e}", exc_info=True)
-            self.local_dataloader = None
+            logging.error(f"Error loading local data: {e}")
+            raise
 
     def train_local_model(self, global_model_state):
         """使用本地數據訓練模型"""

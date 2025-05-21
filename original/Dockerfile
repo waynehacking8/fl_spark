@@ -1,6 +1,10 @@
 # 使用 Nvidia CUDA 運行時映像檔 (Ubuntu 20.04 基礎)
 FROM nvidia/cuda:11.7.1-runtime-ubuntu20.04
 
+# 使用阿里雲鏡像源
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+
 # 避免在 apt-get install 期間出現交互式提示
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -57,52 +61,11 @@ COPY . .
 ENV PYTHONPATH=/app
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV PATH=$PATH:$JAVA_HOME/bin
-# Spark 的環境變量最好在 compose 文件中根據服務角色設置
+ENV PYTHONUNBUFFERED=1
+ENV MPLCONFIGDIR=/tmp/matplotlib
 
 # 暴露端口 (可選)
 EXPOSE 7077 8080 9999
 
 # 默認命令 (可被 docker-compose 覆蓋)
-CMD ["bash"]
-
-FROM bitnami/spark:3.5.0
-
-USER root
-
-# 安裝 Python 和必要的包
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-
-# 安裝 Python 依賴
-RUN pip3 install \
-    torch \
-    torchvision \
-    numpy \
-    pandas \
-    matplotlib \
-    scipy \
-    scikit-learn \
-    diffprivlib \
-    psutil \
-    tqdm \
-    jupyter \
-    notebook \
-    py4j \
-    pyspark \
-    seaborn
-
-# 設置工作目錄
-WORKDIR /app
-
-# 複製代碼
-COPY . /app/
-
-# 設置環境變量
-ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
-ENV MPLCONFIGDIR=/tmp/matplotlib
-
-# 不要切換用戶，保持 root
-# USER 1001 
+CMD ["bash"] 

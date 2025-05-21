@@ -14,8 +14,8 @@ print('Downloading / loading MNIST …')
 train_ds = datasets.MNIST(DATA_DIR, train=True,  download=True)
 test_ds  = datasets.MNIST(DATA_DIR, train=False, download=True)
 
-# 切成 16 份，每份 3750 筆，直接存為 uint8 tensor（節省空間）
-num_parts = 16
+# 切成 2 份，每份 30000 筆，直接存為 uint8 tensor（節省空間）
+num_parts = 2
 samples_per_part = len(train_ds.data) // num_parts
 
 print('Saving per-participant shards …')
