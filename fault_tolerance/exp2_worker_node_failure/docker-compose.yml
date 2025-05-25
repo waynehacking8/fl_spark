@@ -1,0 +1,260 @@
+version: '3.8'
+
+x-logging: &default-logging
+  driver: "local"
+  options:
+    max-size: "5m"
+    max-file: "2"
+
+services:
+  spark-master:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    hostname: spark-master
+    container_name: exp2-spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_PUBLIC_DNS=localhost
+      - SPARK_MEMORY_FRACTION=0.8
+      - SPARK_MEMORY_STORAGEFRACTION=0.3
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      - SPARK_KRYOSERIALIZER_BUFFER_MAX=1024m
+      - SPARK_LOCAL_DIRS=/tmp
+      - SPARK_WORKER_CLEANUP_ENABLED=true
+      - SPARK_DAEMON_MEMORY=4g
+      - SPARK_DRIVER_MEMORY=8g
+      - SPARK_EXECUTOR_MEMORY=8g
+      - SPARK_EXECUTOR_CORES=4
+      - SPARK_DEFAULT_PARALLELISM=8
+      - SPARK_SHUFFLE_COMPRESS=true
+      - SPARK_BROADCAST_COMPRESS=true
+      - SPARK_RDD_COMPRESS=true
+      - SPARK_IO_COMPRESSION_CODEC=snappy
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./spark_code:/app/spark_code
+      - ./main.py:/app/main.py
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    entrypoint: ["/spark-entrypoint.sh"]
+
+  spark-worker-1:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    hostname: spark-worker-1
+    container_name: exp2-spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=8G
+      - SPARK_WORKER_CORES=4
+      - SPARK_WORKER_MEMORY_FRACTION=0.8
+      - SPARK_WORKER_CLEANUP_ENABLED=true
+      - SPARK_WORKER_UI_PORT=8081
+      - SPARK_WORKER_WEBUI_PORT=8081
+      - SPARK_WORKER_OPTS="-Dspark.worker.cleanup.enabled=true"
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./results:/app/results
+    depends_on:
+      - spark-master
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  spark-worker-2:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    hostname: spark-worker-2
+    container_name: exp2-spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=8G
+      - SPARK_WORKER_CORES=4
+      - SPARK_WORKER_MEMORY_FRACTION=0.8
+      - SPARK_WORKER_CLEANUP_ENABLED=true
+      - SPARK_WORKER_UI_PORT=8082
+      - SPARK_WORKER_WEBUI_PORT=8082
+      - SPARK_WORKER_OPTS="-Dspark.worker.cleanup.enabled=true"
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./results:/app/results
+    depends_on:
+      - spark-master
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  data-init:
+    build: .
+    container_name: exp2-data-init
+    user: "0:0"
+    command: ["python3", "/app/spark_code/prepare_data.py"]
+    volumes:
+      - ./data:/app/data:rw
+    networks:
+      - federated_net
+
+  fl-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp2-fl-server
+    command: ["python", "/app/traditional_code/server.py"]
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./traditional_code:/app/traditional_code
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+      - ./results:/app/results
+    networks:
+      - federated_net
+    depends_on:
+      - fl-participant-1
+      - fl-participant-2
+      - fl-participant-3
+      - fl-participant-4
+    environment:
+      - PYTHONUNBUFFERED=1
+    logging: *default-logging
+
+  fl-participant-1:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp2-fl-participant-1
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "1"]
+    logging: *default-logging
+
+  fl-participant-2:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp2-fl-participant-2
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "2"]
+    logging: *default-logging
+
+  fl-participant-3:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp2-fl-participant-3
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "3"]
+    logging: *default-logging
+
+  fl-participant-4:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp2-fl-participant-4
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "4"]
+    logging: *default-logging
+
+networks:
+  federated_net:
+    driver: bridge
+  default:
+    name: fl_spark_federated_net 

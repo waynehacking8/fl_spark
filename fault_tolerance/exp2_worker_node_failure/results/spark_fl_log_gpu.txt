@@ -1,0 +1,6 @@
+nohup: ignoring input
+  File "/app/main.py", line 816
+    except Exception as e:
+SyntaxError: expected 'except' or 'finally' block
+25/05/24 13:21:14 INFO ShutdownHookManager: Shutdown hook called
+25/05/24 13:21:14 INFO ShutdownHookManager: Deleting directory /tmp/spark-5502863a-84d3-4717-b111-4869ea9e517b

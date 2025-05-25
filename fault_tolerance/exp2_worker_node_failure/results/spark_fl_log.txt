@@ -1,0 +1,70 @@
+nohup: ignoring input
+your 131072x1 screen size is bogus. expect trouble
+使用設備: cpu
+加載 MNIST 測試數據...
+測試數據加載完成。樣本數: 10000
+初始化 Spark 會話...
+25/05/24 12:51:28 INFO SparkContext: Running Spark version 3.5.0
+25/05/24 12:51:28 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+25/05/24 12:51:28 INFO SparkContext: Java version 17.0.15
+25/05/24 12:51:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/05/24 12:51:28 INFO ResourceUtils: ==============================================================
+25/05/24 12:51:28 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/05/24 12:51:28 INFO ResourceUtils: ==============================================================
+25/05/24 12:51:28 INFO SparkContext: Submitted application: FederatedLearning
+25/05/24 12:51:28 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 4096, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/05/24 12:51:28 INFO ResourceProfile: Limiting resource is cpu
+25/05/24 12:51:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/05/24 12:51:28 INFO SecurityManager: Changing view acls to: root
+25/05/24 12:51:28 INFO SecurityManager: Changing modify acls to: root
+25/05/24 12:51:28 INFO SecurityManager: Changing view acls groups to: 
+25/05/24 12:51:28 INFO SecurityManager: Changing modify acls groups to: 
+25/05/24 12:51:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+25/05/24 12:51:29 INFO Utils: Successfully started service 'sparkDriver' on port 43323.
+25/05/24 12:51:29 INFO SparkEnv: Registering MapOutputTracker
+25/05/24 12:51:29 INFO SparkEnv: Registering BlockManagerMaster
+25/05/24 12:51:29 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/05/24 12:51:29 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/05/24 12:51:29 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/05/24 12:51:29 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-7af6f734-69aa-45de-9516-8d9cea1a4d29
+25/05/24 12:51:29 INFO MemoryStore: MemoryStore started with capacity 5.0 GiB
+25/05/24 12:51:29 INFO SparkEnv: Registering OutputCommitCoordinator
+25/05/24 12:51:29 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/05/24 12:51:29 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+25/05/24 12:51:29 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+25/05/24 12:51:29 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+25/05/24 12:51:29 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 26 ms (0 ms spent in bootstraps)
+25/05/24 12:51:29 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250524125129-0004
+25/05/24 12:51:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38915.
+25/05/24 12:51:29 INFO NettyBlockTransferService: Server created on a98e491cfb0c:38915
+25/05/24 12:51:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/05/24 12:51:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, a98e491cfb0c, 38915, None)
+25/05/24 12:51:29 INFO BlockManagerMasterEndpoint: Registering block manager a98e491cfb0c:38915 with 5.0 GiB RAM, BlockManagerId(driver, a98e491cfb0c, 38915, None)
+25/05/24 12:51:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, a98e491cfb0c, 38915, None)
+25/05/24 12:51:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, a98e491cfb0c, 38915, None)
+25/05/24 12:51:30 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+Spark 會話初始化完成。使用 Spark 版本: 3.5.0
+開始訓練，共 20 個 round
+
+===== 開始 Round 1/20 =====
+記憶體清理後 - 當前 GPU 記憶體使用: 0.00MB, 峰值: 0.00MB
+Round 1: 開始分布式訓練...
+25/05/24 12:51:30 INFO SparkContext: Starting job: collect at /app/main.py:798
+25/05/24 12:51:30 INFO DAGScheduler: Got job 0 (collect at /app/main.py:798) with 4 output partitions
+25/05/24 12:51:30 INFO DAGScheduler: Final stage: ResultStage 0 (collect at /app/main.py:798)
+25/05/24 12:51:30 INFO DAGScheduler: Parents of final stage: List()
+25/05/24 12:51:30 INFO DAGScheduler: Missing parents: List()
+25/05/24 12:51:30 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at collect at /app/main.py:798), which has no missing parents
+25/05/24 12:51:30 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 889.7 KiB, free 5.0 GiB)
+25/05/24 12:51:30 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 887.2 KiB, free 5.0 GiB)
+25/05/24 12:51:30 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on a98e491cfb0c:38915 (size: 887.2 KiB, free: 5.0 GiB)
+25/05/24 12:51:30 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+25/05/24 12:51:30 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at collect at /app/main.py:798) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+25/05/24 12:51:30 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks resource profile 0
+25/05/24 12:51:45 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:52:00 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:52:15 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:52:30 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:52:45 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:53:00 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+25/05/24 12:53:15 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources

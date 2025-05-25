@@ -1,0 +1,37 @@
+2025-05-25 09:55:27,921 - CIFAR10-Server - INFO - 使用設備: cuda
+2025-05-25 09:55:28,089 - CIFAR10-Server - INFO - 🔄 正常模式：無故障注入
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 結果文件已初始化: ../results/traditional/normal/cifar10_normal_results.csv
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - CIFAR-10 FL Server 初始化完成
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 實驗模式: normal
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 參與者數量: 2
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 訓練輪數: 20
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 故障容錯超時: 30秒
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 🚀 CIFAR-10 聯邦學習開始
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - === 第 1 輪開始 (normal模式) ===
+2025-05-25 09:55:28,090 - CIFAR10-Server - INFO - 等待 2 個參與者連接...
+2025-05-25 09:55:33,367 - CIFAR10-Server - INFO - 參與者 1 已連接
+2025-05-25 09:55:34,830 - CIFAR10-Server - INFO - 參與者 2 已連接
+2025-05-25 09:55:41,598 - CIFAR10-Server - INFO - 收到參與者 1 的更新，數據量: 25000
+2025-05-25 09:55:41,654 - CIFAR10-Server - INFO - 收到參與者 2 的更新，數據量: 25000
+2025-05-25 09:55:41,678 - CIFAR10-Server - INFO - 模型聚合完成，使用 2 個更新
+/home/wayneleo8/fl_spark/fault_tolerance/exp3_cifar10/traditional_code/server_cifar10.py:144: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_data = torch.load('../data/cifar10_test.pt')
+2025-05-25 09:55:42,111 - CIFAR10-Server - INFO - 第 1 輪完成:
+2025-05-25 09:55:42,111 - CIFAR10-Server - INFO -   準確率: 60.28%
+2025-05-25 09:55:42,111 - CIFAR10-Server - INFO -   損失: 1.3122
+2025-05-25 09:55:42,111 - CIFAR10-Server - INFO -   用時: 14.02秒
+2025-05-25 09:55:42,111 - CIFAR10-Server - INFO -   參與者: 2/2
+2025-05-25 09:55:44,116 - CIFAR10-Server - INFO - === 第 2 輪開始 (normal模式) ===
+2025-05-25 09:55:44,117 - CIFAR10-Server - INFO - 等待 2 個參與者連接...
+2025-05-25 09:55:47,097 - CIFAR10-Server - INFO - 參與者 1 已連接
+2025-05-25 09:55:47,158 - CIFAR10-Server - INFO - 參與者 2 已連接
+2025-05-25 09:55:53,752 - CIFAR10-Server - INFO - 收到參與者 2 的更新，數據量: 25000
+2025-05-25 09:55:53,852 - CIFAR10-Server - INFO - 收到參與者 1 的更新，數據量: 25000
+2025-05-25 09:55:53,856 - CIFAR10-Server - INFO - 模型聚合完成，使用 2 個更新
+2025-05-25 09:55:54,036 - CIFAR10-Server - INFO - 第 2 輪完成:
+2025-05-25 09:55:54,036 - CIFAR10-Server - INFO -   準確率: 74.56%
+2025-05-25 09:55:54,036 - CIFAR10-Server - INFO -   損失: 0.7339
+2025-05-25 09:55:54,037 - CIFAR10-Server - INFO -   用時: 9.91秒
+2025-05-25 09:55:54,037 - CIFAR10-Server - INFO -   參與者: 2/2
+2025-05-25 09:55:55,540 - CIFAR10-Server - INFO - === 第 3 輪開始 (normal模式) ===
+2025-05-25 09:55:55,541 - CIFAR10-Server - INFO - 等待 2 個參與者連接...

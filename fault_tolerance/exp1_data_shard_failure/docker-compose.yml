@@ -1,0 +1,204 @@
+version: '3.8'
+
+x-logging: &default-logging
+  driver: "local"
+  options:
+    max-size: "5m"
+    max-file: "2"
+
+services:
+  spark-master:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    hostname: spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_PUBLIC_DNS=localhost
+      - SPARK_MEMORY_FRACTION=0.8
+      - SPARK_MEMORY_STORAGEFRACTION=0.3
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      - SPARK_KRYOSERIALIZER_BUFFER_MAX=1024m
+      - SPARK_LOCAL_DIRS=/tmp
+      - SPARK_WORKER_CLEANUP_ENABLED=true
+      - SPARK_DAEMON_MEMORY=2g
+      - SPARK_DRIVER_MEMORY=4g
+      - SPARK_EXECUTOR_MEMORY=4g
+      - SPARK_EXECUTOR_CORES=2
+      - SPARK_DEFAULT_PARALLELISM=4
+      - SPARK_SHUFFLE_COMPRESS=true
+      - SPARK_BROADCAST_COMPRESS=true
+      - SPARK_RDD_COMPRESS=true
+      - SPARK_IO_COMPRESSION_CODEC=snappy
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./spark_code:/app/spark_code
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    entrypoint: ["/spark-entrypoint.sh"]
+
+  spark-worker-1:
+    build:
+      context: .
+      dockerfile: spark.Dockerfile
+    hostname: spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY_FRACTION=0.8
+      - SPARK_WORKER_CLEANUP_ENABLED=true
+      - SPARK_WORKER_UI_PORT=8081
+      - SPARK_WORKER_WEBUI_PORT=8081
+      - SPARK_WORKER_OPTS="-Dspark.worker.cleanup.enabled=true"
+    volumes:
+      - ./spark_code:/app/spark_code
+      - ./data:/app/data
+      - ./results:/app/results
+    depends_on:
+      - spark-master
+    networks:
+      - federated_net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  data-init:
+    build: .
+    container_name: exp1-data-init
+    user: "0:0"
+    command: ["python3", "/app/traditional_code/prepare_mnist.py"]
+    volumes:
+      - ./data:/app/data:rw
+    networks:
+      - federated_net
+
+  fl-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp1-fl-server
+    command: ["python", "/app/traditional_code/server.py"]
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./traditional_code:/app/traditional_code
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+      - ./results:/app/results
+    networks:
+      - federated_net
+    depends_on:
+      - fl-participant-1
+      - fl-participant-2
+    environment:
+      - PYTHONUNBUFFERED=1
+    logging: *default-logging
+
+  fl-participant-1:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp1-fl-participant-1
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "1"]
+    logging: *default-logging
+
+  fl-participant-2:
+    build: .
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: exp1-fl-participant-2
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - federated_net
+    volumes:
+      - ./data:/app/data
+      - ./traditional_code:/app/traditional_code
+    command: ["python", "/app/traditional_code/participant.py", "2"]
+    logging: *default-logging
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - federated_net
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+    networks:
+      - federated_net
+
+networks:
+  federated_net:
+    driver: bridge
+  default:
+    name: fl_spark_federated_net 

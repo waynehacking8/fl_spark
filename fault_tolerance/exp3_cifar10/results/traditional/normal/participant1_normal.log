@@ -1,0 +1,43 @@
+2025-05-25 09:55:30,566 - CIFAR10-Participant1 - INFO - 參與者 1 使用設備: cuda
+2025-05-25 09:55:31,231 - CIFAR10-Participant1 - INFO - 🔄 正常模式：無故障注入
+2025-05-25 09:55:31,231 - CIFAR10-Participant1 - INFO - 正在加載數據文件: ../data/cifar10_train_part1.pt
+/home/wayneleo8/fl_spark/fault_tolerance/exp3_cifar10/traditional_code/participant_cifar10.py:138: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(data_file, map_location='cpu')
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO - 數據加載完成:
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO -   樣本數: 25000
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO -   批次大小: 64
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO -   批次數: 391
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO -   數據形狀: torch.Size([25000, 3, 32, 32])
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO - CIFAR-10 參與者 1 初始化完成
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO - 實驗模式: normal
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO - 🚀 參與者 1 開始 CIFAR-10 聯邦學習
+2025-05-25 09:55:31,365 - CIFAR10-Participant1 - INFO - 啟動延遲 2 秒...
+2025-05-25 09:55:33,366 - CIFAR10-Participant1 - INFO - === 參與者 1 - 第 1 輪 ===
+2025-05-25 09:55:33,367 - CIFAR10-Participant1 - INFO - 成功連接到服務器 (嘗試 1/3)
+2025-05-25 09:55:33,367 - CIFAR10-Participant1 - INFO - 正在接收全局模型...
+2025-05-25 09:55:34,851 - CIFAR10-Participant1 - INFO - 全局模型接收成功
+2025-05-25 09:55:34,851 - CIFAR10-Participant1 - INFO - 開始第 1 輪本地訓練...
+2025-05-25 09:55:36,691 - CIFAR10-Participant1 - INFO - Epoch 1/5 完成, 平均損失: 1.5608
+2025-05-25 09:55:38,206 - CIFAR10-Participant1 - INFO - Epoch 2/5 完成, 平均損失: 1.1752
+2025-05-25 09:55:39,504 - CIFAR10-Participant1 - INFO - Epoch 3/5 完成, 平均損失: 0.9800
+2025-05-25 09:55:40,313 - CIFAR10-Participant1 - INFO - Epoch 4/5 完成, 平均損失: 0.8655
+2025-05-25 09:55:41,582 - CIFAR10-Participant1 - INFO - Epoch 5/5 完成, 平均損失: 0.7527
+2025-05-25 09:55:41,582 - CIFAR10-Participant1 - INFO - 本地訓練完成，平均損失: 1.0668
+2025-05-25 09:55:41,582 - CIFAR10-Participant1 - INFO - 正在發送模型更新...
+2025-05-25 09:55:41,593 - CIFAR10-Participant1 - INFO - 第 1 輪完成
+2025-05-25 09:55:42,594 - CIFAR10-Participant1 - INFO - === 參與者 1 - 第 2 輪 ===
+2025-05-25 09:55:42,594 - CIFAR10-Participant1 - WARNING - 連接失敗 (嘗試 1/3): [Errno 111] Connection refused
+2025-05-25 09:55:47,097 - CIFAR10-Participant1 - INFO - 成功連接到服務器 (嘗試 2/3)
+2025-05-25 09:55:47,097 - CIFAR10-Participant1 - INFO - 正在接收全局模型...
+2025-05-25 09:55:47,182 - CIFAR10-Participant1 - INFO - 全局模型接收成功
+2025-05-25 09:55:47,183 - CIFAR10-Participant1 - INFO - 開始第 2 輪本地訓練...
+2025-05-25 09:55:48,679 - CIFAR10-Participant1 - INFO - Epoch 1/5 完成, 平均損失: 0.9039
+2025-05-25 09:55:49,504 - CIFAR10-Participant1 - INFO - Epoch 2/5 完成, 平均損失: 0.7257
+2025-05-25 09:55:50,973 - CIFAR10-Participant1 - INFO - Epoch 3/5 完成, 平均損失: 0.6327
+2025-05-25 09:55:52,590 - CIFAR10-Participant1 - INFO - Epoch 4/5 完成, 平均損失: 0.5383
+2025-05-25 09:55:53,841 - CIFAR10-Participant1 - INFO - Epoch 5/5 完成, 平均損失: 0.4809
+2025-05-25 09:55:53,841 - CIFAR10-Participant1 - INFO - 本地訓練完成，平均損失: 0.6563
+2025-05-25 09:55:53,841 - CIFAR10-Participant1 - INFO - 正在發送模型更新...
+2025-05-25 09:55:53,847 - CIFAR10-Participant1 - INFO - 第 2 輪完成
+2025-05-25 09:55:59,967 - CIFAR10-Participant1 - INFO - === 參與者 1 - 第 3 輪 ===
+2025-05-25 09:55:59,967 - CIFAR10-Participant1 - WARNING - 連接失敗 (嘗試 1/3): [Errno 111] Connection refused

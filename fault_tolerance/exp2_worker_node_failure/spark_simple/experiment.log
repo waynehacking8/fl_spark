@@ -1,0 +1,2511 @@
+nohup: ignoring input
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:90: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_data = torch.load(test_file)
+25/05/25 04:38:08 WARN Utils: Your hostname, DESKTOP-PTR9MI5 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+25/05/25 04:38:08 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/05/25 04:38:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 4) / 4]參與者 3 開始本地訓練...
+參與者 4 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 150
+參與者 1 本地訓練完成
+參與者 4 本地訓練完成
+參與者 2 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+[Stage 0:============================================>              (3 + 1) / 4]                                                                                參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 4 開始本地訓練...
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+[Stage 1:>                                                          (0 + 4) / 4]參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 3 本地訓練完成
+參與者 2 本地訓練完成
+                                                                                參與者 3 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 1, Epoch 4/5, Batch 200
+參與者 2, Epoch 5/5, Batch 0
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 200
+[Stage 2:>                                                          (0 + 4) / 4]參與者 3 本地訓練完成
+參與者 1, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 4, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 4 本地訓練完成
+                                                                                參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+[Stage 3:>                                                          (0 + 4) / 4]參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 1, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 4, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 4 本地訓練完成
+                                                                                參與者 1 開始本地訓練...
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2 開始本地訓練...
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 1 本地訓練完成
+參與者 3 本地訓練完成
+參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 3 開始本地訓練...
+參與者 2, Epoch 1/5, Batch 0
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+[Stage 5:>                                                          (0 + 4) / 4]參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 1 本地訓練完成
+參與者 2 本地訓練完成
+參與者 3 本地訓練完成
+                                                                                參與者 4 開始本地訓練...
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 4 本地訓練完成
+參與者 2 本地訓練完成
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 2 在第8輪模擬故障
+參與者 1 開始本地訓練...
+參與者 1 在第8輪模擬故障
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+[Stage 7:>                                                          (0 + 4) / 4]參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 150
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 100
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+[Stage 7:==============>                                            (1 + 3) / 4]參與者 3 本地訓練完成
+[Stage 7:=============================>                             (2 + 2) / 4]參與者 2 訓練失敗: 參與者 2 節點故障
+參與者 1 訓練失敗: 參與者 1 節點故障
+                                                                                參與者 1 開始本地訓練...
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2 開始本地訓練...
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+[Stage 8:>                                                          (0 + 4) / 4]參與者 2, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 150
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 1 本地訓練完成
+參與者 3 本地訓練完成
+參與者 4, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+                                                                                參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2 開始本地訓練...
+參與者 1, Epoch 1/5, Batch 0
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 3 本地訓練完成
+參與者 2 本地訓練完成
+參與者 3 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+[Stage 10:>                                                         (0 + 4) / 4]參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 2, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 2 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 3 本地訓練完成
+[Stage 10:===========================================>              (3 + 1) / 4]                                                                                參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+參與者 3 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+[Stage 11:>                                                         (0 + 4) / 4]參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 150
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 1 本地訓練完成
+參與者 2 本地訓練完成
+                                                                                參與者 3 開始本地訓練...
+參與者 4 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+[Stage 12:>                                                         (0 + 4) / 4]參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100參與者 3, Epoch 4/5, Batch 50
+
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 3, Epoch 5/5, Batch 150
+參與者 4 本地訓練完成
+[Stage 12:=============================>                            (2 + 2) / 4]參與者 1 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+                                                                                參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...參與者 3 開始本地訓練...
+
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+參與者 1, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+[Stage 13:>                                                         (0 + 4) / 4]參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 2/5, Batch 200
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 2, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 2 本地訓練完成
+參與者 3 本地訓練完成
+                                                                                參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2 開始本地訓練...
+參與者 3 開始本地訓練...
+參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0參與者 3, Epoch 1/5, Batch 0
+
+參與者 4, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+[Stage 14:>                                                         (0 + 4) / 4]參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0參與者 3, Epoch 3/5, Batch 0
+
+參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 2, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+[Stage 14:==============>                                           (1 + 3) / 4]參與者 3 本地訓練完成
+參與者 2 本地訓練完成
+參與者 1 本地訓練完成
+                                                                                參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2, Epoch 1/5, Batch 0
+參與者 4 開始本地訓練...
+參與者 3, Epoch 1/5, Batch 0
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+[Stage 15:>                                                         (0 + 4) / 4]參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 1/5, Batch 200
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200參與者 4, Epoch 3/5, Batch 200
+
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+參與者 2 本地訓練完成
+參與者 4, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+                                                                                參與者 4 開始本地訓練...
+參與者 2 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 3 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 1/5, Batch 200
+參與者 3, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 1, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+[Stage 16:>                                                         (0 + 4) / 4]參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 2 本地訓練完成
+參與者 3 本地訓練完成
+參與者 1 本地訓練完成
+                                                                                參與者 4 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 1 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+[Stage 17:>                                                         (0 + 4) / 4]參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 3, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 1, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 4, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 2, Epoch 5/5, Batch 200
+參與者 4 本地訓練完成
+參與者 3 本地訓練完成
+參與者 2 本地訓練完成
+參與者 1 本地訓練完成
+                                                                                參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 3, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 200
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 4, Epoch 2/5, Batch 200
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 2, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+[Stage 18:>                                                         (0 + 4) / 4]參與者 4, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 4, Epoch 3/5, Batch 200
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 0
+參與者 3, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 50
+參與者 2, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 4, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 3, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 2, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 1, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 150
+參與者 2, Epoch 5/5, Batch 150
+參與者 3, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 4, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 2, Epoch 5/5, Batch 200
+參與者 1 本地訓練完成
+[Stage 18:=============================>                            (2 + 2) / 4]參與者 4 本地訓練完成
+參與者 2 本地訓練完成
+                                                                                參與者 4 開始本地訓練...
+參與者 2 開始本地訓練...
+參與者 1 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 3 開始本地訓練...
+/home/wayneleo8/fl_spark/fault_tolerance/exp2_worker_node_failure/spark_simple/spark_fl_simple.py:172: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  participant_data = torch.load(data_file)
+參與者 4, Epoch 1/5, Batch 0
+參與者 2, Epoch 1/5, Batch 0
+參與者 1, Epoch 1/5, Batch 0
+參與者 3, Epoch 1/5, Batch 0
+參與者 4, Epoch 1/5, Batch 50
+參與者 1, Epoch 1/5, Batch 50
+參與者 3, Epoch 1/5, Batch 50
+參與者 2, Epoch 1/5, Batch 50
+參與者 4, Epoch 1/5, Batch 100
+參與者 3, Epoch 1/5, Batch 100
+參與者 1, Epoch 1/5, Batch 100
+參與者 2, Epoch 1/5, Batch 100
+參與者 4, Epoch 1/5, Batch 150
+參與者 1, Epoch 1/5, Batch 150
+[Stage 19:>                                                         (0 + 4) / 4]參與者 3, Epoch 1/5, Batch 150
+參與者 2, Epoch 1/5, Batch 150
+參與者 4, Epoch 1/5, Batch 200
+參與者 3, Epoch 1/5, Batch 200
+參與者 2, Epoch 1/5, Batch 200
+參與者 1, Epoch 1/5, Batch 200
+參與者 4, Epoch 2/5, Batch 0
+參與者 3, Epoch 2/5, Batch 0
+參與者 2, Epoch 2/5, Batch 0
+參與者 1, Epoch 2/5, Batch 0
+參與者 4, Epoch 2/5, Batch 50
+參與者 2, Epoch 2/5, Batch 50
+參與者 3, Epoch 2/5, Batch 50
+參與者 1, Epoch 2/5, Batch 50
+參與者 4, Epoch 2/5, Batch 100
+參與者 2, Epoch 2/5, Batch 100
+參與者 3, Epoch 2/5, Batch 100
+參與者 1, Epoch 2/5, Batch 100
+參與者 4, Epoch 2/5, Batch 150
+參與者 2, Epoch 2/5, Batch 150
+參與者 3, Epoch 2/5, Batch 150
+參與者 1, Epoch 2/5, Batch 150
+參與者 4, Epoch 2/5, Batch 200
+參與者 2, Epoch 2/5, Batch 200
+參與者 3, Epoch 2/5, Batch 200
+參與者 4, Epoch 3/5, Batch 0
+參與者 1, Epoch 2/5, Batch 200
+參與者 2, Epoch 3/5, Batch 0
+參與者 3, Epoch 3/5, Batch 0
+參與者 1, Epoch 3/5, Batch 0
+參與者 4, Epoch 3/5, Batch 50
+參與者 2, Epoch 3/5, Batch 50
+參與者 3, Epoch 3/5, Batch 50
+參與者 1, Epoch 3/5, Batch 50
+參與者 4, Epoch 3/5, Batch 100
+參與者 2, Epoch 3/5, Batch 100
+參與者 3, Epoch 3/5, Batch 100
+參與者 1, Epoch 3/5, Batch 100
+參與者 4, Epoch 3/5, Batch 150
+參與者 2, Epoch 3/5, Batch 150
+參與者 3, Epoch 3/5, Batch 150
+參與者 1, Epoch 3/5, Batch 150
+參與者 4, Epoch 3/5, Batch 200
+參與者 2, Epoch 3/5, Batch 200
+參與者 3, Epoch 3/5, Batch 200
+參與者 4, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 0
+參與者 1, Epoch 3/5, Batch 200
+參與者 3, Epoch 4/5, Batch 0
+參與者 4, Epoch 4/5, Batch 50
+參與者 1, Epoch 4/5, Batch 0
+參與者 2, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 50
+參與者 4, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 100
+參與者 1, Epoch 4/5, Batch 50
+參與者 3, Epoch 4/5, Batch 100
+參與者 2, Epoch 4/5, Batch 150
+參與者 4, Epoch 4/5, Batch 150
+參與者 1, Epoch 4/5, Batch 100
+參與者 3, Epoch 4/5, Batch 150
+參與者 2, Epoch 4/5, Batch 200
+參與者 4, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 150
+參與者 2, Epoch 5/5, Batch 0
+參與者 4, Epoch 5/5, Batch 0
+參與者 3, Epoch 4/5, Batch 200
+參與者 1, Epoch 4/5, Batch 200
+參與者 3, Epoch 5/5, Batch 0
+參與者 2, Epoch 5/5, Batch 50
+參與者 4, Epoch 5/5, Batch 50
+參與者 1, Epoch 5/5, Batch 0
+參與者 3, Epoch 5/5, Batch 50
+參與者 2, Epoch 5/5, Batch 100
+參與者 4, Epoch 5/5, Batch 100
+參與者 1, Epoch 5/5, Batch 50
+參與者 3, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 150
+參與者 1, Epoch 5/5, Batch 100
+參與者 2, Epoch 5/5, Batch 200
+參與者 3, Epoch 5/5, Batch 150
+參與者 4, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 150
+參與者 2 本地訓練完成
+參與者 4 本地訓練完成
+參與者 3, Epoch 5/5, Batch 200
+參與者 1, Epoch 5/5, Batch 200
+參與者 3 本地訓練完成
+參與者 1 本地訓練完成
+                                                                                使用設備: cuda
+測試數據加載完成: 10000 樣本
+Spark FL 初始化完成
+參與者數量: 4
+訓練輪數: 20
+本地訓練輪數: 5
+故障輪次: 8 (參與者 [1, 2] 故障)
+開始 Spark FL Worker Node Fault Tolerance 實驗
+創建本地 Spark 會話...
+Spark 會話創建成功，版本: 3.5.5
+
+==================================================
+Round 1/20
+==================================================
+Round 1: 4/4 參與者成功完成訓練
+Round 1: 全局模型已更新 (基於 4 個參與者)
+Round 1 完成:
+  準確率: 97.30%
+  損失: 0.0885
+  用時: 6.86 秒
+  成功參與者: 4/4
+
+==================================================
+Round 2/20
+==================================================
+Round 2: 4/4 參與者成功完成訓練
+Round 2: 全局模型已更新 (基於 4 個參與者)
+Round 2 完成:
+  準確率: 98.20%
+  損失: 0.0515
+  用時: 3.83 秒
+  成功參與者: 4/4
+
+==================================================
+Round 3/20
+==================================================
+Round 3: 4/4 參與者成功完成訓練
+Round 3: 全局模型已更新 (基於 4 個參與者)
+Round 3 完成:
+  準確率: 98.58%
+  損失: 0.0404
+  用時: 3.86 秒
+  成功參與者: 4/4
+
+==================================================
+Round 4/20
+==================================================
+Round 4: 4/4 參與者成功完成訓練
+Round 4: 全局模型已更新 (基於 4 個參與者)
+Round 4 完成:
+  準確率: 98.84%
+  損失: 0.0340
+  用時: 3.89 秒
+  成功參與者: 4/4
+
+==================================================
+Round 5/20
+==================================================
+Round 5: 4/4 參與者成功完成訓練
+Round 5: 全局模型已更新 (基於 4 個參與者)
+Round 5 完成:
+  準確率: 98.93%
+  損失: 0.0304
+  用時: 3.83 秒
+  成功參與者: 4/4
+
+==================================================
+Round 6/20
+==================================================
+Round 6: 4/4 參與者成功完成訓練
+Round 6: 全局模型已更新 (基於 4 個參與者)
+Round 6 完成:
+  準確率: 98.97%
+  損失: 0.0301
+  用時: 3.84 秒
+  成功參與者: 4/4
+
+==================================================
+Round 7/20
+==================================================
+Round 7: 4/4 參與者成功完成訓練
+Round 7: 全局模型已更新 (基於 4 個參與者)
+Round 7 完成:
+  準確率: 99.02%
+  損失: 0.0279
+  用時: 3.89 秒
+  成功參與者: 4/4
+
+==================================================
+Round 8/20
+==================================================
+Round 8: 注入故障 - 參與者 [1, 2] 將故障
+Round 8: 2/4 參與者成功完成訓練
+Round 8: 失敗的參與者: [1, 2]
+Round 8: 全局模型已更新 (基於 2 個參與者)
+Round 8 完成:
+  準確率: 98.82%
+  損失: 0.0317
+  用時: 28.06 秒
+  成功參與者: 2/4
+
+==================================================
+Round 9/20
+==================================================
+Round 9: 4/4 參與者成功完成訓練
+Round 9: 全局模型已更新 (基於 4 個參與者)
+Round 9 完成:
+  準確率: 99.05%
+  損失: 0.0274
+  用時: 4.41 秒
+  成功參與者: 4/4
+
+==================================================
+Round 10/20
+==================================================
+Round 10: 4/4 參與者成功完成訓練
+Round 10: 全局模型已更新 (基於 4 個參與者)
+Round 10 完成:
+  準確率: 99.07%
+  損失: 0.0271
+  用時: 4.29 秒
+  成功參與者: 4/4
+
+==================================================
+Round 11/20
+==================================================
+Round 11: 4/4 參與者成功完成訓練
+Round 11: 全局模型已更新 (基於 4 個參與者)
+Round 11 完成:
+  準確率: 99.07%
+  損失: 0.0275
+  用時: -1.42 秒
+  成功參與者: 4/4
+
+==================================================
+Round 12/20
+==================================================
+Round 12: 4/4 參與者成功完成訓練
+Round 12: 全局模型已更新 (基於 4 個參與者)
+Round 12 完成:
+  準確率: 99.06%
+  損失: 0.0282
+  用時: 3.72 秒
+  成功參與者: 4/4
+
+==================================================
+Round 13/20
+==================================================
+Round 13: 4/4 參與者成功完成訓練
+Round 13: 全局模型已更新 (基於 4 個參與者)
+Round 13 完成:
+  準確率: 99.07%
+  損失: 0.0287
+  用時: 3.87 秒
+  成功參與者: 4/4
+
+==================================================
+Round 14/20
+==================================================
+Round 14: 4/4 參與者成功完成訓練
+Round 14: 全局模型已更新 (基於 4 個參與者)
+Round 14 完成:
+  準確率: 99.13%
+  損失: 0.0279
+  用時: 3.83 秒
+  成功參與者: 4/4
+
+==================================================
+Round 15/20
+==================================================
+Round 15: 4/4 參與者成功完成訓練
+Round 15: 全局模型已更新 (基於 4 個參與者)
+Round 15 完成:
+  準確率: 99.12%
+  損失: 0.0285
+  用時: 3.86 秒
+  成功參與者: 4/4
+
+==================================================
+Round 16/20
+==================================================
+Round 16: 4/4 參與者成功完成訓練
+Round 16: 全局模型已更新 (基於 4 個參與者)
+Round 16 完成:
+  準確率: 99.15%
+  損失: 0.0284
+  用時: 3.87 秒
+  成功參與者: 4/4
+
+==================================================
+Round 17/20
+==================================================
+Round 17: 4/4 參與者成功完成訓練
+Round 17: 全局模型已更新 (基於 4 個參與者)
+Round 17 完成:
+  準確率: 99.12%
+  損失: 0.0294
+  用時: 3.84 秒
+  成功參與者: 4/4
+
+==================================================
+Round 18/20
+==================================================
+Round 18: 4/4 參與者成功完成訓練
+Round 18: 全局模型已更新 (基於 4 個參與者)
+Round 18 完成:
+  準確率: 99.12%
+  損失: 0.0291
+  用時: 3.80 秒
+  成功參與者: 4/4
+
+==================================================
+Round 19/20
+==================================================
+Round 19: 4/4 參與者成功完成訓練
+Round 19: 全局模型已更新 (基於 4 個參與者)
+Round 19 完成:
+  準確率: 99.14%
+  損失: 0.0298
+  用時: 3.89 秒
+  成功參與者: 4/4
+
+==================================================
+Round 20/20
+==================================================
+Round 20: 4/4 參與者成功完成訓練
+Round 20: 全局模型已更新 (基於 4 個參與者)
+Round 20 完成:
+  準確率: 99.14%
+  損失: 0.0301
+  用時: 3.79 秒
+  成功參與者: 4/4
+
+實驗完成，總用時: 125.49 秒
+結果已保存到: results/spark_fl_results.csv
