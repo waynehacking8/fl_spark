@@ -130,4 +130,7 @@ ehthumbs.db
 Thumbs.db
 
 # Custom
-.Trash-0/ 
+.Trash-0/ # Large data files
+*.pt
+*.tar.gz
+data/raw/
